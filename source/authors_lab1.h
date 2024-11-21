@@ -7,12 +7,12 @@
 #define AUTHORS_TWO_E "Paul Klein"
 #define AUTHORS_TWO_F "Paul Klein"
 
-#define AUTHORS_THREE_A ""
-#define AUTHORS_THREE_B ""
-#define AUTHORS_THREE_C ""
+#define AUTHORS_THREE_A "Sam Diehl"
+#define AUTHORS_THREE_B "Sam Diehl"
+#define AUTHORS_THREE_C "Sam Diehl"
 
-#define AUTHORS_FOUR_A ""
-#define AUTHORS_FOUR_B ""
+#define AUTHORS_FOUR_A "Sam Diehl"
+#define AUTHORS_FOUR_B "Sam Diehl"
 
 #define AUTHORS_FIVE_A ""
 #define AUTHORS_FIVE_B ""

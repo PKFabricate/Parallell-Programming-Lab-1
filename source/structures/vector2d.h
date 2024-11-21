@@ -6,7 +6,7 @@ template<typename _Ty>
         public: Vector2d(_Ty new_x, _Ty new_y) : x{ new_x }, y{ new_y } {};
                 Vector2d() = default;
 
-                _Ty operator [] (int index) {
+                _Ty operator [] (int index) const {
                     if (index == 0) {
                         return x;
                     }
