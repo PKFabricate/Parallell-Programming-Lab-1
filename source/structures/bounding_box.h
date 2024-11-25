@@ -26,17 +26,19 @@ class BoundingBox{
 
 		}
 		BoundingBox get_quadrant(std::uint8_t index) {
+			double x_half = (x_max - x_min)/2 + x_min;
+			double y_half = (y_max - y_min) / 2 + y_min;
 			if (index == 0) {
-				return BoundingBox(x_min, x_max / 2, y_min, y_max / 2);
+				return BoundingBox(x_min, x_half, y_half, y_max);
 			}
 			else if (index == 1) {
-				return BoundingBox(x_max / 2, x_max, y_min, y_max / 2);
+				return BoundingBox(x_half, x_max, y_half, y_max);
 			}
 			else if (index == 2) {
-				return BoundingBox(x_min, x_max / 2, y_max / 2, y_max);
+				return BoundingBox(x_min, x_half, y_min, y_half);
 			}
 			else if (index == 3) {
-				return BoundingBox(x_max / 2, x_max, y_max / 2, y_max);
+				return BoundingBox(x_half, x_max, y_min, y_half);
 			}
 			else throw std::exception("index out of bounds");
 

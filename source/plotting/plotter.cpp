@@ -29,7 +29,11 @@ void Plotter::mark_pixel(std::uint32_t x, std::uint32_t y, std::uint8_t red, std
 
 void Plotter::mark_position(Vector2d<double> position, std::uint8_t red, std::uint8_t green, std::uint8_t blue) {
     if (plot_bounding_box.contains(position)) {
-        mark_pixel(position[0], position[1], red, green, blue);
+        try
+        {
+            mark_pixel(position[0], position[1], red, green, blue);
+        }
+        catch (std::exception){};
     }
 }
 
@@ -42,10 +46,18 @@ void Plotter::add_bodies_to_image(Universe& universe) {
 void Plotter::highlight_position(Vector2d<double> position, std::uint8_t red, std::uint8_t green, std::uint8_t blue) {
     if (plot_bounding_box.contains(position)) {
         for (int i = plot_bounding_box.x_min; i <= plot_bounding_box.x_max; i++) {
-            mark_pixel(i, position[1], red, green, blue);
+            try
+            {
+                mark_pixel(i, position[1], red, green, blue);
+            }
+            catch (std::exception) {};
         }
         for (int i = plot_bounding_box.y_min; i <= plot_bounding_box.y_max; i++) {
-            mark_pixel(position[0], i, red, green, blue);
+            try
+            {
+                mark_pixel(position[0], i, red, green, blue);
+            }
+            catch (std::exception) {};
         }
     }
 }
