@@ -21,21 +21,22 @@ template<typename _Ty>
                     x = new_x;
                     y = new_y;
                 };
-                Vector2d operator + (Vector2d<_Ty> other){
+                Vector2d operator + (Vector2d<_Ty> other) const{
                     return Vector2d(x+other[0], y+other[1]);
                 }
-                Vector2d operator * (_Ty other){
+                Vector2d operator * (_Ty other) const{
                     return Vector2d(x*other, y*other);
                 }
-                Vector2d operator - (Vector2d<_Ty> other){
-                    Vector2d result = Vector2d(x + other[0], y + other[1]);
+                Vector2d operator - (Vector2d<_Ty> other) const{
+                    Vector2d result = Vector2d(x - other[0], y - other[1]);
                     return result;
                 }
-                Vector2d operator / (const _Ty other) {
-                    return Vector2d(x * other, y * other);
+                Vector2d operator / (const _Ty other) const{
+                    return Vector2d(x / other, y / other);
                 };
-                bool operator == (Vector2d<_Ty> other) {
+                bool operator == (Vector2d<_Ty> other) const{
                     return (x == other[0] && y==other[1]);
                 };
 
             };
+    

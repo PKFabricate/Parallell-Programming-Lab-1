@@ -6,12 +6,12 @@ static Vector2d<T> calculate_acceleration(const Vector2d<T> force, const T mass)
         throw std::invalid_argument("Mass cant be Zero");
     }
     else {
-        return force / mass;
+        return force/mass;
     }
 }
 
 
 template <typename T>
 static Vector2d<T> calculate_velocity(const Vector2d<T> velocity0, const Vector2d<T> acceleration, const T time) {
-    return velocity0 + (acceleration * time);
+    return velocity0+(acceleration*time);
 }

@@ -37,8 +37,21 @@ void NaiveSequentialSimulation::calculate_forces(Universe& universe) {
         universe.forces[body] = Vector2d(x_force, y_force);
 
     }
-
-
-
 };
 
+void NaiveSequentialSimulation::calculate_velocities(Universe& universe) {
+    for (std::uint32_t body = 0; body < universe.num_bodies; body++) {
+        Vector2d<double> v0 = universe.velocities[body];
+        Vector2d<double> force = universe.forces[body];
+        double mass = universe.weights[body];
+        universe.velocities[body] = calculate_velocity(v0, calculate_acceleration(force, mass), epoch_in_seconds);
+    }
+}
+
+void NaiveSequentialSimulation::calculate_positions(Universe& universe) {
+    for (std::uint32_t body = 0; body < universe.num_bodies; body++) {
+        Vector2d<double> pos0 = universe.positions[body];
+        Vector2d<double> movement = universe.velocities[body] * epoch_in_seconds;
+        universe.positions[body] = pos0 + movement;
+    }
+}
