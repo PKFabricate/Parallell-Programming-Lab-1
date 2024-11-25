@@ -15,7 +15,7 @@
 #define AUTHORS_FOUR_B "Sam Diehl"
 
 #define AUTHORS_FIVE_A "Paul Klein"
-#define AUTHORS_FIVE_B ""
-#define AUTHORS_FIVE_C ""
+#define AUTHORS_FIVE_B "Sam Diehl"
+#define AUTHORS_FIVE_C "Sam Diehl"
 #define AUTHORS_FIVE_D "Paul Klein"
 #define AUTHORS_FIVE_E "Paul Klein"
